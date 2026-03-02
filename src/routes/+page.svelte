@@ -118,7 +118,7 @@
     .page {
         max-width: 820px;
         margin: 0 auto;
-        padding: 3rem 2rem 5rem;
+        padding: 3rem 2rem 9rem;
     }
 
     /* Hero */
@@ -126,15 +126,15 @@
         margin-bottom: 2.5rem;
 
         h1 {
-            font-size: 1.75rem;
+            font-size: 2.8rem;
             font-weight: 700;
             color: $text;
             letter-spacing: -0.01em;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
         }
 
         p {
-            font-size: 0.9375rem;
+            font-size: 1.5rem;
             color: $muted;
             line-height: 1.6;
         }
@@ -144,7 +144,7 @@
     .endpoints {
         display: flex;
         flex-direction: column;
-        gap: 1.25rem;
+        gap: 1.5rem;
     }
 
     .card {
@@ -157,15 +157,15 @@
     .card-head {
         display: flex;
         align-items: center;
-        gap: 0.75rem;
-        padding: 0.875rem 1.25rem;
+        gap: 1rem;
+        padding: 1.2rem 1.6rem;
         border-bottom: 1px solid $border;
         background: rgba(255, 255, 255, 0.02);
         flex-wrap: wrap;
 
         .route {
             font-family: 'Courier New', monospace;
-            font-size: 0.9375rem;
+            font-size: 1.5rem;
             color: $text;
 
             .param { color: $accent; }
@@ -173,17 +173,17 @@
 
         .card-desc {
             margin-left: auto;
-            font-size: 0.8125rem;
+            font-size: 1.3rem;
             color: $muted;
         }
     }
 
     /* Badges */
     .badge {
-        font-size: 0.6875rem;
+        font-size: 1.1rem;
         font-weight: 700;
         font-family: monospace;
-        padding: 0.2rem 0.55rem;
+        padding: 0.2rem 0.7rem;
         border-radius: 4px;
         flex-shrink: 0;
 
@@ -194,38 +194,38 @@
         }
 
         &.sm {
-            font-size: 0.6rem;
-            padding: 0.15rem 0.45rem;
+            font-size: 0.9rem;
+            padding: 0.15rem 0.55rem;
         }
     }
 
     /* Blocks */
     .block {
-        padding: 1rem 1.25rem;
+        padding: 1.2rem 1.6rem;
         border-bottom: 1px solid $border;
 
         &:last-child { border-bottom: none; }
     }
 
     .label {
-        font-size: 0.6875rem;
+        font-size: 1rem;
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.07em;
         color: $muted;
-        margin-bottom: 0.625rem;
+        margin-bottom: 0.8rem;
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.6rem;
     }
 
     .status-ok {
-        font-size: 0.6875rem;
+        font-size: 1rem;
         font-weight: 600;
         color: $green;
         background: rgba(63, 185, 80, 0.1);
         border: 1px solid rgba(63, 185, 80, 0.25);
-        padding: 0.1rem 0.45rem;
+        padding: 0.1rem 0.5rem;
         border-radius: 3px;
         text-transform: none;
         letter-spacing: 0;
@@ -235,19 +235,19 @@
     table {
         width: 100%;
         border-collapse: collapse;
-        font-size: 0.875rem;
+        font-size: 1.35rem;
 
         th {
             text-align: left;
-            padding: 0.375rem 0.75rem;
+            padding: 0.5rem 0.8rem;
             color: $muted;
             font-weight: 500;
-            font-size: 0.75rem;
+            font-size: 1.2rem;
             border-bottom: 1px solid $border;
         }
 
         td {
-            padding: 0.5rem 0.75rem;
+            padding: 0.6rem 0.8rem;
             color: $muted;
             line-height: 1.45;
             border-bottom: 1px solid rgba(48, 54, 61, 0.5);
@@ -257,7 +257,7 @@
 
             code {
                 font-family: 'Courier New', monospace;
-                font-size: 0.8125rem;
+                font-size: 1.25rem;
                 color: $accent;
                 background: $accent-dim;
                 padding: 0.1rem 0.4rem;
@@ -272,24 +272,24 @@
     .examples {
         display: flex;
         flex-direction: column;
-        gap: 0.375rem;
+        gap: 0.5rem;
     }
 
     .ex {
         display: flex;
         align-items: center;
-        gap: 0.6rem;
+        gap: 0.8rem;
         background: $code-bg;
         border: 1px solid $border;
         border-radius: 6px;
-        padding: 0.5rem 0.875rem;
+        padding: 0.7rem 1.1rem;
         transition: border-color 0.15s;
 
         &:hover { border-color: #484f58; }
 
         code {
             font-family: 'Courier New', monospace;
-            font-size: 0.875rem;
+            font-size: 1.35rem;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -306,20 +306,19 @@
         background: $code-bg;
         border: 1px solid $border;
         border-radius: 6px;
-        padding: 0.75rem 1rem;
+        padding: 1rem 1.2rem;
         overflow-x: auto;
 
         code {
             font-family: 'Courier New', monospace;
-            font-size: 0.875rem;
+            font-size: 1.35rem;
             color: $blue;
             white-space: pre;
         }
     }
 
     @media (max-width: 640px) {
-        .page { padding: 1.75rem 1rem 4rem; }
+        .page { padding: 2rem 1.2rem 9rem; }
         .card-head .card-desc { display: none; }
-        .ex code { font-size: 0.78rem; }
     }
 </style>

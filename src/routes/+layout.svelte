@@ -1,103 +1,169 @@
 <script lang="ts">
+    import ThemeToggle from "@components/ThemeToggle.svelte";
     import type { Snippet } from "svelte";
 
     let { children }: { children: Snippet } = $props();
 </script>
 
-<nav>
-    <a href="/" class="brand">mcskin.me</a>
-    <a href="https://github.com/TinyBrickBoy/mcpfp" target="_blank" rel="noopener" class="nav-link">GitHub</a>
+<nav id="navBar">
+    <a href="/">
+        <img src="/PFP/I_Like_Cats__.png" alt="logo" />
+    </a>
+
+    <a href="/">
+        <h1>mcskin.me</h1>
+    </a>
+
+    <div id="themeToggle">
+        <ThemeToggle />
+    </div>
 </nav>
 
-<main>
-    {@render children()}
-</main>
+<footer id="footer">
+    <a href="https://github.com/TinyBrickBoy/mcpfp" target="_blank" rel="noopener">
+        <p>View me on GitHub!</p>
+    </a>
 
-<footer>
-    <span>Built by <a href="https://github.com/TinyBrickBoy" target="_blank" rel="noopener">TinyBrickBoy</a></span>
-    <span>Based on <a href="https://github.com/MauritsWilke/mcpfp" target="_blank" rel="noopener">mcpfp by MauritsWilke</a></span>
+    <a href="https://github.com/MauritsWilke/mcpfp" target="_blank" rel="noopener">
+        <p>Thanks to MauritsWilke!</p>
+    </a>
 </footer>
 
+{@render children()}
+
 <style lang="scss">
-    $accent: #da4167;
-    $bg: #0d1117;
-    $bg-nav: #161b22;
-    $border: #30363d;
-    $text: #e6edf3;
-    $text-muted: #8b949e;
+    $background-color: #1b2531;
+    $background-color-dark: #191f27;
+    $coloured-text: #da4167;
+
+    $lightMode-background-color: #fff;
+    $lightMode-background-color-dark: #fff;
+
+    :root {
+        font-size: 10px;
+    }
 
     :global(*) {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
+
+        transition: all 0.3s;
+        font-family: "Minecraft", "monospace";
+        font-display: swap;
     }
 
     :global(body) {
-        background: $bg;
-        color: $text;
-        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        font-size: 14px;
-        line-height: 1.5;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
+        background-color: $background-color;
     }
 
-    :global(a) { text-decoration: none; }
+    :global(body.dark-mode) {
+        background-color: $lightMode-background-color;
+    }
 
-    nav {
-        position: sticky;
-        top: 0;
-        z-index: 100;
+    a {
+        text-decoration: none;
+    }
+
+    #navBar {
+        width: 100vw;
+        height: 9rem;
+
         display: flex;
+
+        background-color: $background-color-dark;
+        box-shadow: 0px 1px 3px rgba(255, 255, 255, 0.25);
+
+        img {
+            height: 6rem;
+            width: auto;
+            margin: 1.5rem;
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: $coloured-text;
+            font-size: 5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        #themeToggle {
+            margin-left: auto;
+            margin-right: 1.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 1.5rem;
+
+            height: 6rem;
+            width: 6rem;
+        }
+    }
+
+    :global(body.dark-mode) #navBar {
+        background-color: $lightMode-background-color-dark;
+        box-shadow: 0px 1px 3px rgba(25, 31, 39, 0.25);
+    }
+
+    #footer {
+        position: fixed;
+        bottom: 0;
+
+        height: 4rem;
+        width: 100vw;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        justify-content: space-between;
-        padding: 0 1.5rem;
-        height: 44px;
-        background: $bg-nav;
-        border-bottom: 1px solid $border;
 
-        .brand {
-            font-family: "Minecraft", monospace;
-            font-size: 0.95rem;
-            color: $accent;
+        p {
+            font-size: 2rem;
+            margin: 1rem;
+            color: #fff;
         }
 
-        .nav-link {
-            font-size: 0.8rem;
-            color: $text-muted;
-            transition: color 0.15s;
+        background-color: $background-color-dark;
+        box-shadow: 0px -1px 3px rgba(255, 255, 255, 0.25);
+    }
 
-            &:hover { color: $text; }
+    :global(body.dark-mode) #footer {
+        background-color: $lightMode-background-color-dark;
+        box-shadow: 0px -1px 3px rgba(25, 31, 39, 0.25);
+
+        p {
+            color: $background-color-dark;
         }
     }
 
-    main { flex: 1; }
+    @media only screen and (max-width: 768px) {
+        #navBar {
+            height: 7rem;
 
-    footer {
-        display: flex;
-        justify-content: space-between;
-        padding: 0.75rem 1.5rem;
-        border-top: 1px solid $border;
-        font-size: 0.75rem;
-        color: $text-muted;
+            h1 {
+                font-size: 2.5rem;
+            }
 
-        a {
-            color: $text-muted;
-            border-bottom: 1px solid transparent;
-            transition: color 0.15s, border-color 0.15s;
+            img {
+                height: 5rem;
+                width: auto;
+                margin: 1rem;
+                border-radius: 5px;
+            }
 
-            &:hover {
-                color: $accent;
-                border-color: $accent;
+            #themeToggle {
+                margin-left: auto;
+                margin-right: 0.5rem;
+                margin-bottom: 1.5rem;
+                margin-top: 1.5rem;
+
+                height: 4rem;
+                width: 4rem;
             }
         }
-    }
 
-    @media (max-width: 600px) {
-        footer {
-            flex-direction: column;
-            gap: 0.25rem;
+        #footer {
+            p {
+                font-size: 1.5rem;
+            }
         }
     }
 </style>
