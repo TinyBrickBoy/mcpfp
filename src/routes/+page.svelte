@@ -6,7 +6,7 @@
 <div class="page">
     <section class="hero">
         <h1>Minecraft Skin API</h1>
-        <p>Generate profile pictures and fetch skin data for any Minecraft player — no auth required.</p>
+        <p>Render profile pictures, heads, bodies and chests — or fetch raw skin data for any Minecraft player. No auth required.</p>
     </section>
 
     <section class="endpoints">
