@@ -358,6 +358,11 @@
         }
     }
 
+    /* Override Minecraft font for all code elements and their children */
+    :global(code), :global(code *), :global(pre), :global(pre *) {
+        font-family: 'Courier New', monospace;
+    }
+
     /* Cards */
     .endpoints {
         display: flex;
