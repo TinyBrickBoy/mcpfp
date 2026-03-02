@@ -6,9 +6,7 @@
 
 <nav>
     <a href="/" class="brand">mcskin.me</a>
-    <div class="nav-links">
-        <a href="https://github.com/TinyBrickBoy/mcpfp" target="_blank" rel="noopener">GitHub</a>
-    </div>
+    <a href="https://github.com/TinyBrickBoy/mcpfp" target="_blank" rel="noopener" class="nav-link">GitHub</a>
 </nav>
 
 <main>
@@ -38,16 +36,14 @@
         background: $bg;
         color: $text;
         font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        font-size: 16px;
-        line-height: 1.6;
+        font-size: 14px;
+        line-height: 1.5;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
     }
 
-    :global(a) {
-        text-decoration: none;
-    }
+    :global(a) { text-decoration: none; }
 
     nav {
         position: sticky;
@@ -56,51 +52,39 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 2.4rem;
-        height: 5.6rem;
+        padding: 0 1.5rem;
+        height: 44px;
         background: $bg-nav;
         border-bottom: 1px solid $border;
-        backdrop-filter: blur(8px);
 
         .brand {
             font-family: "Minecraft", monospace;
-            font-size: 2rem;
+            font-size: 0.95rem;
             color: $accent;
-            letter-spacing: 0.05em;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
+        .nav-link {
+            font-size: 0.8rem;
+            color: $text-muted;
+            transition: color 0.15s;
 
-            a {
-                color: $text-muted;
-                font-size: 1.4rem;
-                transition: color 0.15s;
-
-                &:hover {
-                    color: $text;
-                }
-            }
+            &:hover { color: $text; }
         }
     }
 
-    main {
-        flex: 1;
-    }
+    main { flex: 1; }
 
     footer {
         display: flex;
         justify-content: space-between;
-        padding: 2rem 2.4rem;
+        padding: 0.75rem 1.5rem;
         border-top: 1px solid $border;
-        font-size: 1.3rem;
+        font-size: 0.75rem;
         color: $text-muted;
 
         a {
             color: $text-muted;
-            border-bottom: 1px solid $border;
+            border-bottom: 1px solid transparent;
             transition: color 0.15s, border-color 0.15s;
 
             &:hover {
@@ -111,14 +95,9 @@
     }
 
     @media (max-width: 600px) {
-        nav {
-            padding: 0 1.6rem;
-        }
-
         footer {
             flex-direction: column;
-            gap: 0.8rem;
-            padding: 1.6rem;
+            gap: 0.25rem;
         }
     }
 </style>
