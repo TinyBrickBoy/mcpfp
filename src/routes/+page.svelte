@@ -1,11 +1,11 @@
 <svelte:head>
-    <meta name="title" content="Minecraft PFP API" />
+    <meta name="title" content="mcskin.me" />
     <meta name="description" content="API to generate Minecraft profile pictures and retrieve skin data." />
 </svelte:head>
 
 <div id="docs">
     <section id="intro">
-        <h2>Minecraft PFP API</h2>
+        <h2>mcskin.me</h2>
         <p>A simple API for generating Minecraft profile pictures and retrieving skin data.</p>
     </section>
 

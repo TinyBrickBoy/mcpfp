@@ -11,7 +11,7 @@
     </a>
 
     <a href="/">
-        <h1>Minecraft PFP</h1>
+        <h1>mcskin.me</h1>
     </a>
 
     <div id="themeToggle">
@@ -24,8 +24,8 @@
         <p>View me on GitHub!</p>
     </a>
 
-    <a href="https://ko-fi.com/mauritswilke" target="blank">
-        <p>Buy me a coffee!</p>
+    <a href="https://github.com/MauritsWilke/mcpfp" target="blank">
+        <p>Thanks to MauritsWilke!</p>
     </a>
 </footer>
 
