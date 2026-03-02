@@ -1,171 +1,124 @@
 <script lang="ts">
-    import ThemeToggle from "@components/ThemeToggle.svelte";
     import type { Snippet } from "svelte";
 
     let { children }: { children: Snippet } = $props();
 </script>
 
-<nav id="navBar">
-    <a href="/">
-        <img src="/PFP/I_Like_Cats__.png" alt="logo" />
-    </a>
-
-    <a href="/">
-        <h1>mcskin.me</h1>
-    </a>
-
-    <div id="themeToggle">
-        <ThemeToggle />
+<nav>
+    <a href="/" class="brand">mcskin.me</a>
+    <div class="nav-links">
+        <a href="https://github.com/TinyBrickBoy/mcpfp" target="_blank" rel="noopener">GitHub</a>
     </div>
 </nav>
 
-<footer id="footer">
-    <a href="https://github.com/TinyBrickBoy/mcpfp" target="blank">
-        <p>View me on GitHub!</p>
-    </a>
+<main>
+    {@render children()}
+</main>
 
-    <a href="https://github.com/MauritsWilke/mcpfp" target="blank">
-        <p>Thanks to MauritsWilke!</p>
-    </a>
+<footer>
+    <span>Built by <a href="https://github.com/TinyBrickBoy" target="_blank" rel="noopener">TinyBrickBoy</a></span>
+    <span>Based on <a href="https://github.com/MauritsWilke/mcpfp" target="_blank" rel="noopener">mcpfp by MauritsWilke</a></span>
 </footer>
 
-{@render children()}
-
 <style lang="scss">
-    $background-color: #1b2531;
-    $background-color-dark: #191f27;
-    $coloured-text: #da4167;
-
-    $lightMode-background-color: #fff;
-    $lightMode-background-color-dark: #fff;
-
-    :root {
-        font-size: 10px;
-    }
+    $accent: #da4167;
+    $bg: #0d1117;
+    $bg-nav: #161b22;
+    $border: #30363d;
+    $text: #e6edf3;
+    $text-muted: #8b949e;
 
     :global(*) {
         margin: 0;
         padding: 0;
-
-        transition: all 0.3s;
-        font-family: "Minecraft", "monospace";
-        font-display: swap;
+        box-sizing: border-box;
     }
 
     :global(body) {
-        background-color: $background-color;
+        background: $bg;
+        color: $text;
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
 
-    :global(body.dark-mode) {
-        background-color: $lightMode-background-color;
-    }
-
-    a {
+    :global(a) {
         text-decoration: none;
     }
 
-    #navBar {
-        width: 100vw;
-        height: 9rem;
-
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
         display: flex;
-
-        background-color: $background-color-dark;
-        box-shadow: 0px 1px 3px rgba(255, 255, 255, 0.25);
-
-        img {
-            height: 6rem;
-            width: auto;
-            margin: 1.5rem;
-            border-radius: 5px;
-        }
-
-        h1 {
-            color: $coloured-text;
-            font-size: 5rem;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        #themeToggle {
-            margin-left: auto;
-            margin-right: 1.5rem;
-            margin-bottom: 1.5rem;
-            margin-top: 1.5rem;
-
-            height: 6rem;
-            width: 6rem;
-        }
-    }
-
-    :global(body.dark-mode) #navBar {
-        background-color: $lightMode-background-color-dark;
-        box-shadow: 0px 1px 3px rgba(25, 31, 39, 0.25);
-    }
-
-    #footer {
-        position: fixed;
-        bottom: 0;
-
-        height: 4rem;
-        width: 100vw;
-
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
+        padding: 0 2.4rem;
+        height: 5.6rem;
+        background: $bg-nav;
+        border-bottom: 1px solid $border;
+        backdrop-filter: blur(8px);
 
-        p {
+        .brand {
+            font-family: "Minecraft", monospace;
             font-size: 2rem;
-            margin: 1rem;
-
-            color: #fff;
+            color: $accent;
+            letter-spacing: 0.05em;
         }
 
-        background-color: $background-color-dark;
-        box-shadow: 0px -1px 3px rgba(255, 255, 255, 0.25);
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+
+            a {
+                color: $text-muted;
+                font-size: 1.4rem;
+                transition: color 0.15s;
+
+                &:hover {
+                    color: $text;
+                }
+            }
+        }
     }
 
-    :global(body.dark-mode) #footer {
-        background-color: $lightMode-background-color-dark;
-        box-shadow: 0px -1px 3px rgba(25, 31, 39, 0.25);
+    main {
+        flex: 1;
+    }
 
-        p {
-            color: $background-color-dark;
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 2.4rem;
+        border-top: 1px solid $border;
+        font-size: 1.3rem;
+        color: $text-muted;
+
+        a {
+            color: $text-muted;
+            border-bottom: 1px solid $border;
+            transition: color 0.15s, border-color 0.15s;
+
+            &:hover {
+                color: $accent;
+                border-color: $accent;
+            }
         }
     }
 
-    @media only screen and (max-width: 768px) {
-        #navBar {
-            height: 7rem;
-
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            img {
-                height: 5rem;
-                width: auto;
-                margin: 1rem;
-                border-radius: 5px;
-            }
-
-            // Sizing and such is in the component itself ThemeToggle.svelte
-            #themeToggle {
-                margin-left: auto;
-                margin-right: 0.5rem;
-                margin-bottom: 1.5rem;
-                margin-top: 1.5rem;
-
-                height: 4rem;
-                width: 4rem;
-            }
+    @media (max-width: 600px) {
+        nav {
+            padding: 0 1.6rem;
         }
 
-        #footer {
-            p {
-                font-size: 1.5rem;
-            }
+        footer {
+            flex-direction: column;
+            gap: 0.8rem;
+            padding: 1.6rem;
         }
     }
 </style>
