@@ -64,6 +64,128 @@
         <div class="card">
             <div class="card-head">
                 <span class="badge get">GET</span>
+                <code class="route">/api/skin/<span class="param">{"{username}"}</span>.png</code>
+                <span class="card-desc">Returns the raw Minecraft skin texture as PNG.</span>
+            </div>
+
+            <div class="block">
+                <div class="label">Parameters</div>
+                <table>
+                    <thead><tr><th>Name</th><th>In</th><th>Description</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td><code>username</code></td>
+                            <td>path</td>
+                            <td>Minecraft username (1–16 characters)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="block">
+                <div class="label">Example</div>
+                <div class="examples">
+                    <div class="ex">
+                        <span class="badge get sm">GET</span>
+                        <code><span class="seg-path">/api/skin/<span class="seg-param">TinyBrickBoy</span>.png</span></code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-head">
+                <span class="badge get">GET</span>
+                <code class="route">/api/head/<span class="param">{"{username}"}</span>.png</code>
+                <span class="card-desc">Returns a rendered 2D face with hat layer.</span>
+            </div>
+
+            <div class="block">
+                <div class="label">Parameters</div>
+                <table>
+                    <thead><tr><th>Name</th><th>In</th><th>Description</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td><code>username</code></td>
+                            <td>path</td>
+                            <td>Minecraft username (1–16 characters)</td>
+                        </tr>
+                        <tr>
+                            <td><code>size</code></td>
+                            <td>query</td>
+                            <td>Output size in pixels (8–512), default <code>128</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>overlay</code></td>
+                            <td>query</td>
+                            <td>Set to <code>false</code> to hide the hat layer</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="block">
+                <div class="label">Examples</div>
+                <div class="examples">
+                    <div class="ex">
+                        <span class="badge get sm">GET</span>
+                        <code><span class="seg-path">/api/head/<span class="seg-param">TinyBrickBoy</span>.png</span></code>
+                    </div>
+                    <div class="ex">
+                        <span class="badge get sm">GET</span>
+                        <code><span class="seg-path">/api/head/<span class="seg-param">TinyBrickBoy</span>.png</span><span class="seg-q">?size=<span class="seg-v">256</span></span></code>
+                    </div>
+                    <div class="ex">
+                        <span class="badge get sm">GET</span>
+                        <code><span class="seg-path">/api/head/<span class="seg-param">TinyBrickBoy</span>.png</span><span class="seg-q">?overlay=<span class="seg-v">false</span></span></code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-head">
+                <span class="badge get">GET</span>
+                <code class="route">/api/uuid/<span class="param">{"{username}"}</span>.json</code>
+                <span class="card-desc">Returns the UUID for a given username.</span>
+            </div>
+
+            <div class="block">
+                <div class="label">Parameters</div>
+                <table>
+                    <thead><tr><th>Name</th><th>In</th><th>Description</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td><code>username</code></td>
+                            <td>path</td>
+                            <td>Minecraft username (1–16 characters)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="block">
+                <div class="label">Example</div>
+                <div class="examples">
+                    <div class="ex">
+                        <span class="badge get sm">GET</span>
+                        <code><span class="seg-path">/api/uuid/<span class="seg-param">TinyBrickBoy</span>.json</span></code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="label">Response <span class="status-ok">200 OK</span></div>
+                <pre><code>{`{
+  "username": "TinyBrickBoy",
+  "uuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+}`}</code></pre>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-head">
+                <span class="badge get">GET</span>
                 <code class="route">/api/mojang/<span class="param">{"{username}"}</span>.json</code>
                 <span class="card-desc">Returns skin data as a base64-encoded data URL.</span>
             </div>

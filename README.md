@@ -14,13 +14,12 @@ Based on [mcpfp](https://github.com/MauritsWilke/mcpfp) by [MauritsWilke](https:
 GET /api/pfp/{username}.png
 ```
 
-| Parameter     | In    | Description                                      |
-|---------------|-------|--------------------------------------------------|
-| `username`    | path  | Minecraft username (1–16 characters)             |
-| `gradient`    | query | Hex colors separated by `-`, e.g. `ff0000-0000ff`|
-| `transparent` | query | Set to `true` for a transparent background       |
+| Parameter     | In    | Description                                       |
+|---------------|-------|---------------------------------------------------|
+| `username`    | path  | Minecraft username (1–16 characters)              |
+| `gradient`    | query | Hex colors separated by `-`, e.g. `ff0000-0000ff` |
+| `transparent` | query | Set to `true` for a transparent background        |
 
-**Examples**
 ```
 /api/pfp/TinyBrickBoy.png
 /api/pfp/TinyBrickBoy.png?gradient=da4167-1b2531
@@ -29,22 +28,61 @@ GET /api/pfp/{username}.png
 
 ---
 
-### Get Skin Data
+### Raw Skin Texture
+
+```
+GET /api/skin/{username}.png
+```
+
+Returns the raw 64×64 Minecraft skin texture as PNG.
+
+```
+/api/skin/TinyBrickBoy.png
+```
+
+---
+
+### Head / Face
+
+```
+GET /api/head/{username}.png
+```
+
+| Parameter  | In    | Description                                  |
+|------------|-------|----------------------------------------------|
+| `username` | path  | Minecraft username (1–16 characters)         |
+| `size`     | query | Output size in pixels (8–512), default `128` |
+| `overlay`  | query | Set to `false` to hide the hat layer         |
+
+```
+/api/head/TinyBrickBoy.png
+/api/head/TinyBrickBoy.png?size=256
+/api/head/TinyBrickBoy.png?overlay=false
+```
+
+---
+
+### UUID Lookup
+
+```
+GET /api/uuid/{username}.json
+```
+
+```json
+{
+  "username": "TinyBrickBoy",
+  "uuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+}
+```
+
+---
+
+### Skin Data (base64)
 
 ```
 GET /api/mojang/{username}.json
 ```
 
-| Parameter  | In   | Description                          |
-|------------|------|--------------------------------------|
-| `username` | path | Minecraft username (1–16 characters) |
-
-**Example**
-```
-/api/mojang/TinyBrickBoy.json
-```
-
-**Response**
 ```json
 { "skin": "data:image/png;base64,..." }
 ```
