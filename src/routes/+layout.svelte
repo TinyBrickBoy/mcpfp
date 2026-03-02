@@ -50,6 +50,7 @@
 
     :global(body) {
         background-color: $background-color;
+        overflow-x: hidden;
     }
 
     :global(body.dark-mode) {
@@ -61,7 +62,7 @@
     }
 
     #navBar {
-        width: 100vw;
+        width: 100%;
         height: 9rem;
 
         display: flex;
@@ -97,7 +98,7 @@
         bottom: 0;
 
         height: 4rem;
-        width: 100vw;
+        width: 100%;
 
         display: flex;
         flex-direction: row;

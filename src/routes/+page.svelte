@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>mcskin.me</title>
+    <title>mcskin.me — Minecraft Skin API</title>
     <meta name="description" content="Free API to generate Minecraft profile pictures and retrieve skin data." />
 </svelte:head>
 
