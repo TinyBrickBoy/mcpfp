@@ -7,10 +7,6 @@
 
 <nav id="navBar">
     <a href="/">
-        <img src="/PFP/I_Like_Cats__.png" alt="logo" />
-    </a>
-
-    <a href="/">
         <h1>mcskin.me</h1>
     </a>
 
