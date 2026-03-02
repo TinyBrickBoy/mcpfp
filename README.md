@@ -28,6 +28,49 @@ GET /api/pfp/{username}.png
 
 ---
 
+### Full Body
+
+```
+GET /api/body/{username}.png
+```
+
+Renders a flat front-view of the full character (head, body, arms, legs).
+
+| Parameter  | In    | Description                                            |
+|------------|-------|--------------------------------------------------------|
+| `username` | path  | Minecraft username (1–16 characters)                   |
+| `size`     | query | Output height in pixels (32–1024), default `256`       |
+| `overlay`  | query | Set to `false` to hide hat & armor layers              |
+
+```
+/api/body/TinyBrickBoy.png
+/api/body/TinyBrickBoy.png?size=512
+/api/body/TinyBrickBoy.png?overlay=false
+```
+
+---
+
+### Chest
+
+```
+GET /api/chest/{username}.png
+```
+
+Renders only the torso and arms (no head, no legs).
+
+| Parameter  | In    | Description                                       |
+|------------|-------|---------------------------------------------------|
+| `username` | path  | Minecraft username (1–16 characters)              |
+| `size`     | query | Output height in pixels (12–1024), default `128`  |
+| `overlay`  | query | Set to `false` to hide armor layer                |
+
+```
+/api/chest/TinyBrickBoy.png
+/api/chest/TinyBrickBoy.png?size=256
+```
+
+---
+
 ### Raw Skin Texture
 
 ```

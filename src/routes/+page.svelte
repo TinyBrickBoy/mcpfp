@@ -64,6 +64,102 @@
         <div class="card">
             <div class="card-head">
                 <span class="badge get">GET</span>
+                <code class="route">/api/body/<span class="param">{"{username}"}</span>.png</code>
+                <span class="card-desc">Returns a full-body front-view render.</span>
+            </div>
+
+            <div class="block">
+                <div class="label">Parameters</div>
+                <table>
+                    <thead><tr><th>Name</th><th>In</th><th>Description</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td><code>username</code></td>
+                            <td>path</td>
+                            <td>Minecraft username (1–16 characters)</td>
+                        </tr>
+                        <tr>
+                            <td><code>size</code></td>
+                            <td>query</td>
+                            <td>Output height in pixels (32–1024), default <code>256</code>. Width scales proportionally (1:2 ratio).</td>
+                        </tr>
+                        <tr>
+                            <td><code>overlay</code></td>
+                            <td>query</td>
+                            <td>Set to <code>false</code> to hide hat &amp; armor layers</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="block">
+                <div class="label">Examples</div>
+                <div class="examples">
+                    <div class="ex">
+                        <span class="badge get sm">GET</span>
+                        <code><span class="seg-path">/api/body/<span class="seg-param">TinyBrickBoy</span>.png</span></code>
+                    </div>
+                    <div class="ex">
+                        <span class="badge get sm">GET</span>
+                        <code><span class="seg-path">/api/body/<span class="seg-param">TinyBrickBoy</span>.png</span><span class="seg-q">?size=<span class="seg-v">512</span></span></code>
+                    </div>
+                    <div class="ex">
+                        <span class="badge get sm">GET</span>
+                        <code><span class="seg-path">/api/body/<span class="seg-param">TinyBrickBoy</span>.png</span><span class="seg-q">?overlay=<span class="seg-v">false</span></span></code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-head">
+                <span class="badge get">GET</span>
+                <code class="route">/api/chest/<span class="param">{"{username}"}</span>.png</code>
+                <span class="card-desc">Returns a torso + arms render (no head, no legs).</span>
+            </div>
+
+            <div class="block">
+                <div class="label">Parameters</div>
+                <table>
+                    <thead><tr><th>Name</th><th>In</th><th>Description</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td><code>username</code></td>
+                            <td>path</td>
+                            <td>Minecraft username (1–16 characters)</td>
+                        </tr>
+                        <tr>
+                            <td><code>size</code></td>
+                            <td>query</td>
+                            <td>Output height in pixels (12–1024), default <code>128</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>overlay</code></td>
+                            <td>query</td>
+                            <td>Set to <code>false</code> to hide armor layer</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="block">
+                <div class="label">Examples</div>
+                <div class="examples">
+                    <div class="ex">
+                        <span class="badge get sm">GET</span>
+                        <code><span class="seg-path">/api/chest/<span class="seg-param">TinyBrickBoy</span>.png</span></code>
+                    </div>
+                    <div class="ex">
+                        <span class="badge get sm">GET</span>
+                        <code><span class="seg-path">/api/chest/<span class="seg-param">TinyBrickBoy</span>.png</span><span class="seg-q">?size=<span class="seg-v">256</span></span></code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-head">
+                <span class="badge get">GET</span>
                 <code class="route">/api/skin/<span class="param">{"{username}"}</span>.png</code>
                 <span class="card-desc">Returns the raw Minecraft skin texture as PNG.</span>
             </div>
