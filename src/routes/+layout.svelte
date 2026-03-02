@@ -65,22 +65,15 @@
         height: 9rem;
 
         display: flex;
+        align-items: center;
 
         background-color: $background-color-dark;
         box-shadow: 0px 1px 3px rgba(255, 255, 255, 0.25);
 
-        img {
-            height: 6rem;
-            width: auto;
-            margin: 1.5rem;
-            border-radius: 5px;
-        }
-
         h1 {
             color: $coloured-text;
             font-size: 5rem;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
+            margin-left: 1.5rem;
         }
 
         #themeToggle {
